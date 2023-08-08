@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Prototype;
+package creational.prototype;
 
-/**
- *
- * @author HP
- */
 public class Main {
-    
+  public static void main(String[] args) {
+    Prototype c1 = new Circle(4.6, "red");
+    c1.draw();
+
+    Prototype c2 = c1.clone();
+    c2.draw();
+  }
 }

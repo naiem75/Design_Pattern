@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Factory;
-
-/**
- *
- * @author HP
- */
-public class AnimalFactory {
-    
+public class AnimalFactory
+{
+ public Animal getAnimal( String animalType )
+ {
+ Animal animal = null;
+ if( "dog".equals(animalType) )
+ {
+ animal = new Dog();
+ }
+ else if( "duck".equals(animalType) )
+ {
+ animal = new Duck();
+ }
+ else if( "lion".equals(animalType) )
+ {
+ animal = new Lion();
+ }
+ return animal;
+ }
 }

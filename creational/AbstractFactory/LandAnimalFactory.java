@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package AbstractFactory;
 
-/**
- *
- * @author HP
- */
-public class LandAnimalFactory {
-    
+public class LandAnimalFactory extends AnimalFactory
+{
+ public Animal getAnimal( String animalType )
+ {
+ Animal animal = null;
+ if( "dog".equals(animalType) )
+ {
+ animal = new Dog();
+ }
+ else if( "cat".equals(animalType) )
+ {
+ animal = new Cat();
+ }
+ else if( "lion".equals(animalType) )
+ {
+ animal = new Lion();
+ }
+ return animal;
+ }
 }

@@ -1,13 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Prototype;
+package creational.prototype;
 
-/**
- *
- * @author HP
- */
-public class Circle {
-    
+public class Circle implements Prototype {
+
+  double radius;
+  String color;
+
+  public Circle(double radius, String color) {
+    this.radius = radius;
+    this.color = color;
+  }
+
+  public Circle(Circle c) {
+    if (c != null) {
+      this.radius = c.radius;
+      this.color = c.color;
+    }
+  }
+  @Override
+  public void draw() {
+    System.out.println("Color : " + color + "\n" + "Radius : " + radius);
+  }
+
+  @Override
+  public Prototype clone() {
+    return new Circle(this);
+  }
 }

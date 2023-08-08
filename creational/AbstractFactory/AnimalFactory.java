@@ -1,13 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package AbstractFactory;
+public abstract class AnimalFactory
+{
+ public abstract Animal getAnimal( String animalType );
+ 
+ public static AnimalFactory getAnimalFacory(String factoryType)
+ {
+ AnimalFactory animalFactory = null ;
+ if("sea".equals(factoryType))
+ {
+ animalFactory = new SeaAnimalFactory();
+ }
+ else
+ {
+ animalFactory = new LandAnimalFactory();
+ }
+ return animalFactory;
+ }
 
-/**
- *
- * @author HP
- */
-public class AnimalFactory {
-    
 }
