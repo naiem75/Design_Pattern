@@ -1,13 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Builder;
+public class CoffeeBuilder extends BeverageBuilder
+{
+ Beverage createBeverage()
+ {
+ return new Beverage();
+ }
 
-/**
- *
- * @author HP
- */
-public class CoffeeBuilder {
-    
+ public void setWater()
+ {
+ System.out.println("Step 1 : Boiling water");
+ getBeverage().setWater(40);
+ }
+
+ public void setMilk()
+ {
+ System.out.println("Step 2 : Adding milk");
+ getBeverage().setMilk(50);
+ }
+
+ void setSugar()
+ {
+ System.out.println("Step 3 : Adding sugar");
+ getBeverage().setSugar(10);
+ }
+
+ void setPowderQuantity()
+ {
+ System.out.println("Step 4 : Adding 9 Grams of coffee powder");
+ getBeverage().setPowderQuantity(9);
+ }
+
+ void setBeverageType()
+ {
+ System.out.println("Coffee");
+ getBeverage().setBeverageName("Coffee");
+ }
+
 }
+
